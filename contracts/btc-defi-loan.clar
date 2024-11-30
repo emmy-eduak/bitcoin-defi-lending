@@ -19,3 +19,15 @@
 (define-constant ERR-DUPLICATE-PARTICIPANT (err u1008))
 (define-constant ERR-INSUFFICIENT-POOL-FUNDS (err u1009))
 (define-constant ERR-POOL-NOT-READY (err u1010))
+
+;; Contract Configuration Constants
+(define-constant MAX-DAILY-LIMIT u10000000000)
+(define-constant MAX-POOL-PARTICIPANTS u10)
+(define-constant MAX-TRANSACTION-AMOUNT u1000000000000)
+(define-constant MIN-POOL-AMOUNT u100000)
+(define-constant MIXING-FEE-PERCENTAGE u2) ;; 2% mixing fee
+
+;; State Variables
+(define-data-var is-contract-initialized bool false)
+(define-data-var is-contract-paused bool false)
+(define-data-var total-protocol-fees uint u0)
