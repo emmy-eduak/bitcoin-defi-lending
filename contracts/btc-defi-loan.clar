@@ -31,3 +31,26 @@
 (define-data-var is-contract-initialized bool false)
 (define-data-var is-contract-paused bool false)
 (define-data-var total-protocol-fees uint u0)
+
+;; Data Maps
+(define-map user-balances 
+    principal 
+    uint)
+
+(define-map daily-tx-totals 
+    {user: principal, day: uint}
+    uint)
+
+(define-map mixer-pools 
+    uint 
+    {
+        total-amount: uint,
+        participant-count: uint,
+        is-active: bool,
+        participants: (list 10 principal),
+        pool-creator: principal
+    })
+
+(define-map pool-participant-status 
+    {pool-id: uint, user: principal}
+    bool)
